@@ -1,0 +1,4 @@
+SetEnv dbuser  root
+SetEnv dbpass  
+SetEnv dbname  project
+SetEnv dbhost  localhost
