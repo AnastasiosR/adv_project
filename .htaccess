@@ -1,4 +1,4 @@
-SetEnv dbuser  root
-SetEnv dbpass  
-SetEnv dbname  project
-SetEnv dbhost  localhost
+SetEnv dbuser  techshop
+SetEnv dbpass  AdvancedWeb2019
+SetEnv dbname  techshop
+SetEnv dbhost  oa4.info
