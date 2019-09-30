@@ -69,15 +69,12 @@ if(isset($_POST["getProduct"])){
 			$pro_title = $row['product_title'];
 			$pro_price = $row['product_price'];
 			$pro_image = $row['product_image'];
-			$pro_desc  = $row['product_desc'];
-			print_r($row);
 			echo "
 				<div class='col-md-4'>
 							<div class='panel panel-info'>
 								<div class='panel-heading'>$pro_title</div>
 								<div class='panel-body'>
 									<img src='product_images/$pro_image' style='width:160px; height:250px;'/>
-									<a href='#' >$product_desc</a>
 								</div>
 								<div class='panel-heading'>$$pro_price.00
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
@@ -243,7 +240,6 @@ if (isset($_POST["Common"])) {
 				$product_title = $row["product_title"];
 				$product_price = $row["product_price"];
 				$product_image = $row["product_image"];
-				$product_desc  =$row["product_desc"];
 				$cart_item_id = $row["id"];
 				$qty = $row["qty"];
 				echo '
