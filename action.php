@@ -1,10 +1,7 @@
 <?php
-//okilopeserfvs
-//include db
-include "db.php";
 session_start();
 $ip_add = getenv("REMOTE_ADDR");
-
+include "db.php";
 if(isset($_POST["category"])){
 	$category_query = "SELECT * FROM categories";
 	$run_query = mysqli_query($con,$category_query) or die(mysqli_error($con));
@@ -77,7 +74,7 @@ if(isset($_POST["getProduct"])){
 								<div class='panel-body'>
 									<img src='product_images/$pro_image' style='width:160px; height:250px;'/>
 								</div>
-								<div class='panel-heading'>$$pro_price.00
+								<div class='panel-heading'>$.$pro_price.00
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
 								</div>
 							</div>
@@ -86,19 +83,6 @@ if(isset($_POST["getProduct"])){
 		}
 	}
 }
-// if(isset ($_GET["search"])){
-// if(isset($_GET["get_selected_Category"])){
-// 	$id = $_GET["cat_id"];
-// 	$sql = "SELECT * FROM products WHERE product_cat = '$id'";
-// }else if(isset($_GET["selectBrand"])){
-// 	$id = $_GET["brand_id"];
-// 	$sql = "SELECT * FROM products WHERE product_brand = '$id'";
-// }else {
-// 	$keyword = $_GET["keyword"];
-// 	$sql = "SELECT * FROM products WHERE product_keywords LIKE '%$keyword%'";
-// }
-
-// }
 if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isset($_POST["search"])){
 	if(isset($_POST["get_seleted_Category"])){
 		$id = $_POST["cat_id"];
@@ -119,16 +103,14 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 			$pro_title = $row['product_title'];
 			$pro_price = $row['product_price'];
 			$pro_image = $row['product_image'];
-			$pro_description=$row['product_desc'];
 			echo "
 				<div class='col-md-4'>
 							<div class='panel panel-info'>
 								<div class='panel-heading'>$pro_title</div>
 								<div class='panel-body'>
 									<img src='product_images/$pro_image' style='width:160px; height:250px;'/>
-									<p></p>
 								</div>
-								<div class='panel-heading'>$$pro_price.00
+								<div class='panel-heading'>$.$pro_price.00
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
 								</div>
 							</div>

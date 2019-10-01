@@ -1,4 +1,5 @@
 <?php
+
 $servername = getenv('dbhost');
 //$servername = "localhost";
 $username = getenv('dbuser');

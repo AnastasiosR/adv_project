@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 if(isset($_SESSION["uid"])){
 	header("location:profile.php");
@@ -37,7 +36,7 @@ if(isset($_SESSION["uid"])){
 				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
 				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
 			</ul>
-			<form class="navbar-form navbar-left" action="search">
+			<form class="navbar-form navbar-left">
 		        <div class="form-group">
 		          <input type="text" class="form-control" placeholder="Search" id="search">
 		        </div>
@@ -49,7 +48,10 @@ if(isset($_SESSION["uid"])){
 						<div class="panel panel-success">
 							<div class="panel-heading">
 								<div class="row">
-								
+									<div class="col-md-3">Sl.No</div>
+									<div class="col-md-3">Product Image</div>
+									<div class="col-md-3">Product Name</div>
+									<div class="col-md-3">Price in $.</div>
 								</div>
 							</div>
 							<div class="panel-body">
@@ -78,8 +80,7 @@ if(isset($_SESSION["uid"])){
 										<label for="email">Password</label>
 										<input type="password" class="form-control" name="password" id="password" required/>
 										<p><br/></p>
-										<a href="customer_registration.php?register=1" style="color:white; list-style:none;">Register</a>
-										<input type="submit" class="btn btn-success" style="float:right;">
+										<a href="customer_registration.php?register=1" style="color:white; list-style:none;">Register</a><input type="submit" class="btn btn-success" style="float:right;">
 									</form>
 								</div>
 								<div class="panel-footer" id="e_msg"></div>
@@ -145,7 +146,6 @@ if(isset($_SESSION["uid"])){
 			</div>
 			<div class="col-md-1"></div>
 		</div>
-		<p>Anna/ Tasos E-Commerce Website</p>
 	</div>
 </body>
 </html>
