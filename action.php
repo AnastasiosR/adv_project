@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="custom.js"></script>
+</html>
 <?php
 session_start();
 $ip_add = getenv("REMOTE_ADDR");
@@ -19,6 +24,17 @@ if(isset($_POST["category"])){
 		}
 		echo "</div>";
 	}
+}
+
+//product spec
+if(isset($_POST["View Detail"])){
+	
+	echo"
+       <a href='product.php'>
+	";
+
+
+
 }
 if(isset($_POST["brand"])){
 	$brand_query = "SELECT * FROM brands";
@@ -67,22 +83,27 @@ if(isset($_POST["getProduct"])){
 			$pro_title = $row['product_title'];
 			$pro_price = $row['product_price'];
 			$pro_image = $row['product_image'];
+			$pro_desc  = $row['product_desc'];
 			echo "
+			
 				<div class='col-md-4'>
 							<div class='panel panel-info'>
 								<div class='panel-heading'>$pro_title</div>
 								<div class='panel-body'>
 									<img src='product_images/$pro_image' style='width:160px; height:250px;'/>
 								</div>
-								<div class='panel-heading'>$.$pro_price.00
+								<div class='panel-heading'>$$pro_price.00
+								<button class='product-button'  data-description='$pro_desc'>View Detail</button>
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
 								</div>
 							</div>
-						</div>	
+						</div>
+
 			";
 		}
 	}
 }
+
 if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isset($_POST["search"])){
 	if(isset($_POST["get_seleted_Category"])){
 		$id = $_POST["cat_id"];
@@ -103,6 +124,8 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 			$pro_title = $row['product_title'];
 			$pro_price = $row['product_price'];
 			$pro_image = $row['product_image'];
+			$pro_desc  = $row['product_desc'];
+
 			echo "
 				<div class='col-md-4'>
 							<div class='panel panel-info'>
@@ -110,7 +133,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 								<div class='panel-body'>
 									<img src='product_images/$pro_image' style='width:160px; height:250px;'/>
 								</div>
-								<div class='panel-heading'>$.$pro_price.00
+								<div class='panel-heading'>$$pro_price.00
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
 								</div>
 							</div>
@@ -140,7 +163,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
 						<b>Product is already added into the cart Continue Shopping..!</b>
 				</div>
-			";//not in video
+			";
 		} else {
 			$sql = "INSERT INTO `cart`
 			(`p_id`, `ip_add`, `user_id`, `qty`) 

@@ -25,6 +25,8 @@ $(document).ready(function(){
 			}
 		})
 	}
+
+	
 	//get product
 		function product(){
 		$.ajax({
@@ -36,7 +38,34 @@ $(document).ready(function(){
 			}
 		})
 	}
-	
+	function productDesc(){
+		$.ajax({
+			url: "action.php",
+			method:"POST",
+			data : {getProductDesc:1},
+			success : function(data){
+				$("get_product_desc").html(data);
+			}
+
+		})
+	}
+
+    function getProduct(){
+		$.ajax({
+			url: "action.php",
+			method: "POST",
+			data  : {getProduct:1}
+		})
+	}
+
+	function getProductDesc(){
+		$.ajax({
+			url: "action.php",
+			method:"POST",
+			data:{getProductDesc:1}
+		})
+	}
+
 	$("body").delegate(".category","click",function(event){
 		$("#get_product").html("<h3>Loading...</h3>");
 		event.preventDefault();
@@ -97,10 +126,7 @@ $(document).ready(function(){
 
 
 	/*
-		Here #login is login form id and this form is available in index.php page
-		from here input data is sent to login.php page
-		if you get login_success string from login.php page means user is logged in successfully and window.location is 
-		used to redirect user from home page to profile.php page
+		
 	*/
 	$("#login").on("submit",function(event){
 		event.preventDefault();
