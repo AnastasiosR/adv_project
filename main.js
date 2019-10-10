@@ -106,6 +106,7 @@ $(document).ready(function(){
 	})
 	//search button
 	$("#search_btn").click(function(){
+		event.preventDefault();
 		$("#get_product").html("<h3>Loading...</h3>");
 		var keyword = $("#search").val();
 		if(keyword != ""){
@@ -114,6 +115,7 @@ $(document).ready(function(){
 			method	:	"POST",
 			data	:	{search:1,keyword:keyword},
 			success	:	function(data){ 
+				
 				$("#get_product").html(data);
 				if($("body").width() < 480){
 					$("body").scrollTop(683);

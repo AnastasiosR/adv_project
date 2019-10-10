@@ -90,10 +90,10 @@ if(isset($_POST["getProduct"])){
 							<div class='panel panel-info'>
 								<div class='panel-heading'>$pro_title</div>
 								<div class='panel-body'>
-									<img src='product_images/$pro_image' style='width:160px; height:250px;'/>
+									<img src='product_images/$pro_image' style='width:160px; height:150px;'/>
 								</div>
 								<div class='panel-heading'>$$pro_price.00
-								<button class='product-button'  data-description='$pro_desc'>View Detail</button>
+								<button class='btn btn-danger btn-xs  product-button'  data-description='$pro_desc'>View Detail</button>
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
 								</div>
 							</div>
@@ -131,9 +131,10 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 							<div class='panel panel-info'>
 								<div class='panel-heading'>$pro_title</div>
 								<div class='panel-body'>
-									<img src='product_images/$pro_image' style='width:160px; height:250px;'/>
+									<img src='product_images/$pro_image' style='width:160px; height:150px;'/>
 								</div>
 								<div class='panel-heading'>$$pro_price.00
+								<button class='btn btn-danger btn-xs  product-button'  data-description='$pro_desc'>View Detail</button>
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
 								</div>
 							</div>
